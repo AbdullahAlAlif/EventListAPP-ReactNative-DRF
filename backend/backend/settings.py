@@ -51,7 +51,6 @@ MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -125,5 +124,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# CORS settings for local development
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8081',
+    'http://127.0.0.1:8081',
+]
+# If you want to allow all origins during development, you can instead set:
+# CORS_ALLOW_ALL_ORIGINS = True
